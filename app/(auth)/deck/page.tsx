@@ -16,22 +16,30 @@ export default function CardManager() {
 
   return (
     <div className="min-h-screen bg-[#D1E0F3] font-roboto text-[#4A5568] flex flex-col">
+      
       {/* --- Navbar --- */}
       <nav className="flex items-center justify-between px-10 py-4 bg-white border-b border-gray-100 shadow-sm">
-        <div className="flex items-center gap-2">
-           <div className="bg-[#E0F2FE] p-1.5 rounded-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#57B3D6" strokeWidth="2.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+        <Link href="/" className="flex items-center gap-2">
+           <div className="flex items-center">
+            <img 
+              src="/Picture/logo.png" 
+              alt="FlashLearn Logo" 
+              className="h-10 w-auto object-contain" 
+            />
           </div>
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
-        </div>
+        </Link>
         <div className="flex gap-8 font-bold text-[#A0AEC0]">
-          <Link href="/signin">Sign in</Link>
+          {/* Linked to login folder */}
+          <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
+          
           <Link href="/dashboard" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Dashboard</Link>
-          <Link href="#">Study Mode</Link>
-          <Link href="#">Setting</Link>
+          
+          {/* Linked to study folder */}
+          <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
+          
+          {/* Linked to setting_privacy folder */}
+          <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>
 
@@ -84,9 +92,9 @@ export default function CardManager() {
             {/* Header with Close Icon */}
             <div className="bg-[#FFB067] py-4 px-10 flex justify-between items-center">
               <h1 className="text-2xl font-bold text-white tracking-wide">Card {selectedCard.id}</h1>
-              <button className="text-white hover:rotate-90 transition-transform">
+              <Link href="/dashboard" className="text-white hover:rotate-90 transition-transform">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
+              </Link>
             </div>
             
             <div className="p-12 flex-grow flex flex-col justify-center">
@@ -102,9 +110,13 @@ export default function CardManager() {
 
               {/* Action Buttons */}
               <div className="flex justify-between items-center mt-auto">
-                <button className="bg-[#00B4FF] hover:bg-[#0094d1] text-white font-bold py-3 px-12 rounded-full shadow-[0_4px_0_#0086bd] active:shadow-none active:translate-y-[4px] transition-all">
+                {/* ANSWER BUTTON LINKED TO answer FOLDER */}
+                <Link 
+                  href="/answer"
+                  className="bg-[#00B4FF] hover:bg-[#0094d1] text-white font-bold py-3 px-12 rounded-full shadow-[0_4px_0_#0086bd] active:shadow-none active:translate-y-[4px] transition-all text-center"
+                >
                   Answer
-                </button>
+                </Link>
                 
                 <div className="flex gap-4">
                   <button className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 text-gray-400 transition-all active:scale-95">

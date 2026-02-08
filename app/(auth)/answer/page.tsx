@@ -19,22 +19,24 @@ export default function CardAnswerManager() {
 
   return (
     <div className="min-h-screen bg-[#D1E0F3] font-roboto text-[#4A5568] flex flex-col">
-      {/* --- Navbar --- */}
+      
+      {/* --- Navbar (Synced) --- */}
       <nav className="flex items-center justify-between px-10 py-4 bg-white border-b border-gray-100 shadow-sm">
-        <div className="flex items-center gap-2">
-           <div className="bg-[#E0F2FE] p-1.5 rounded-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#57B3D6" strokeWidth="2.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+        <Link href="/" className="flex items-center gap-2">
+           <div className="flex items-center">
+            <img 
+              src="/Picture/logo.png" 
+              alt="FlashLearn Logo" 
+              className="h-10 w-auto object-contain" 
+            />
           </div>
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
-        </div>
+        </Link>
         <div className="flex gap-8 font-bold text-[#A0AEC0]">
-          <Link href="/signin">Sign in</Link>
+          <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
           <Link href="/dashboard" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Dashboard</Link>
-          <Link href="#">Study Mode</Link>
-          <Link href="#">Setting</Link>
+          <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
+          <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>
 
@@ -58,16 +60,19 @@ export default function CardAnswerManager() {
                 {cards.map((card) => (
                   <div 
                     key={card.id} 
-                    className={`flex items-center justify-between p-4 rounded-xl border-b border-gray-100 last:border-0 hover:bg-[#FFF5EB] transition-colors ${selectedCard.id === card.id ? 'bg-[#FFF5EB]' : ''}`}
+                    className={`flex items-center justify-between p-4 rounded-xl border-b border-gray-100 last:border-0 hover:bg-[#FFF5EB] transition-colors group ${selectedCard.id === card.id ? 'bg-[#FFF5EB]' : ''}`}
                   >
                     <span className={`text-lg font-bold ${selectedCard.id === card.id ? 'text-[#57B3D6]' : 'text-[#4A5568]'}`}>
                       {card.name}
                     </span>
                     <div className="flex items-center gap-3">
-                      <button className="bg-[#D97706] text-white text-xs font-bold py-1.5 px-5 rounded-full shadow-sm">
+                      <button 
+                        onClick={() => setSelectedCard({ ...selectedCard, id: card.id })}
+                        className="bg-[#D97706] hover:bg-[#B45309] text-white text-xs font-bold py-1.5 px-5 rounded-full shadow-sm active:translate-y-px transition-all"
+                      >
                         Edit
                       </button>
-                      <button className="text-gray-300">
+                      <button className="text-gray-300 hover:text-red-400 transition-colors">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                       </button>
                     </div>
@@ -98,18 +103,19 @@ export default function CardAnswerManager() {
               </div>
 
               <div className="flex justify-between items-center mt-auto">
+                {/* QUESTION BUTTON LINKED TO DECK FOLDER */}
                 <Link 
-                  href={`/dashboard/decks/1`} // Link back to the Question view
-                  className="bg-[#00B4FF] hover:bg-[#0094d1] text-white font-bold py-3 px-12 rounded-full shadow-[0_4px_0_#0086bd] active:shadow-none active:translate-y-[4px] transition-all"
+                  href="/deck"
+                  className="bg-[#00B4FF] hover:bg-[#0094d1] text-white font-bold py-3 px-12 rounded-full shadow-[0_4px_0_#0086bd] active:shadow-none active:translate-y-[4px] transition-all text-center"
                 >
                   Question
                 </Link>
                 
                 <div className="flex gap-4">
-                  <button className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 text-gray-400">
+                  <button className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 text-gray-400 transition-all active:scale-95">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="15 18 9 12 15 6"></polyline></svg>
                   </button>
-                  <button className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 text-gray-400">
+                  <button className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 text-gray-400 transition-all active:scale-95">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
                   </button>
                 </div>

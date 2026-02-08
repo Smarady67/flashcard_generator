@@ -1,37 +1,37 @@
 'use client';
 
 import React from 'react';
-
-// Note: Ensure Roboto is configured in your tailwind.config.js 
-// or imported in your global CSS for these classes to take effect.
+import Link from 'next/link'; // [1] Import Link for navigation
 
 export default function FlashcardLanding() {
   return (
     <div className="min-h-screen bg-white font-roboto text-[#4A5568]">
       
       {/* --- Navbar --- */}
-     <nav className="flex items-center justify-between px-10 py-5 border-b border-gray-100">
-  {/* Logo Side */}
-  <div className="flex items-center gap-2">
-    <div className="bg-[#E0F2FE] p-1.5 rounded-lg">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#57B3D6" strokeWidth="2.5">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-      </svg>
-    </div>
-    <span className="font-extrabold text-[#2D3748] text-xl font-roboto">Flash Card Generator</span>
-  </div>
+      <nav className="flex items-center justify-between px-10 py-5 border-b border-gray-100">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center">
+            <img 
+              src="/Picture/logo.png" 
+              alt="FlashLearn Logo" 
+              className="h-10 w-auto object-contain" 
+            />
+          </div>
+          <span className="font-extrabold text-[#2D3748] text-xl font-roboto">Flash Card Generator</span>
+        </div>
 
-  {/* Auth Buttons Side */}
-  <div className="flex items-center gap-6 font-roboto">
-    <button className="text-[#4A5568] hover:text-[#57B3D6] font-semibold transition-colors">
-      Sign In
-    </button>
-    <button className="bg-[#57B3D6] hover:bg-[#45a2c5] text-white px-6 py-2.5 rounded-full font-bold shadow-md transition-all active:scale-95">
-      Sign Up
-    </button>
-  </div>
-</nav>
+        <div className="flex items-center gap-6 font-roboto">
+          {/* [2] Sign In Link */}
+          <Link href="/login" className="text-[#4A5568] hover:text-[#57B3D6] font-semibold transition-colors">
+            Sign In
+          </Link>
+          
+          {/* [3] Sign Up Link */}
+          <Link href="/signup" className="bg-[#57B3D6] hover:bg-[#45a2c5] text-white px-6 py-2.5 rounded-full font-bold shadow-md transition-all active:scale-95">
+            Sign Up
+          </Link>
+        </div>
+      </nav>
 
       {/* --- Hero Section --- */}
       <section className="relative pt-20 pb-40 px-10 overflow-hidden">
@@ -45,21 +45,22 @@ export default function FlashcardLanding() {
             <p className="text-[#A0AEC0] text-xl font-medium font-roboto">
               Learn more about flashcard generator
             </p>
-            <button className="bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-4 px-12 rounded-full shadow-[0_5px_0_#E38E49] active:shadow-none active:translate-y-[5px] transition-all text-lg font-roboto">
+            
+            {/* [4] Get Started Button (Links to Signup) */}
+            <Link href="/signup" className="inline-block bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-4 px-12 rounded-full shadow-[0_5px_0_#E38E49] active:shadow-none active:translate-y-[5px] transition-all text-lg font-roboto">
               Get Started for Free
-            </button>
+            </Link>
           </div>
 
           <div className="md:w-1/2 flex justify-center relative mt-16 md:mt-0">
-  <img 
-    src="/Picture/logowebpage.png" 
-    alt="Flashcard Generator Logo" 
-    className="w-80 h-80 md:w-150 md:h-150 object-contain"
-  />
-</div>
+            <img 
+              src="/Picture/logowebpage.png" 
+              alt="Flashcard Generator Logo" 
+              className="w-80 h-80 md:w-150 md:h-150 object-contain"
+            />
+          </div>
         </div>
 
-        {/* The Wave Divider - Exact Color Match */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
           <svg className="relative block w-full h-[120px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#E0F2FE"></path>
@@ -101,9 +102,10 @@ export default function FlashcardLanding() {
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>
             </div>
-            <button className="bg-[#FFB067] text-white py-3.5 px-16 rounded-full font-roboto italic text-2xl shadow-[0_5px_0_#E38E49]">
+            {/* [5] Optional: Link this button to signup as well */}
+            <Link href="/signup" className="bg-[#FFB067] text-white py-3.5 px-16 rounded-full font-roboto italic text-2xl shadow-[0_5px_0_#E38E49]">
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </section>

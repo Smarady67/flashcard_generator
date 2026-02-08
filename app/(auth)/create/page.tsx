@@ -18,23 +18,24 @@ export default function CreateDeck() {
   return (
     <div className="min-h-screen bg-[#D1E0F3] font-roboto text-[#4A5568] flex flex-col">
       
-      {/* --- Navbar --- */}
+      {/* --- Navbar (Synced with Dashboard) --- */}
       <nav className="flex items-center justify-between px-10 py-4 bg-white border-b border-gray-100 shadow-sm">
         <Link href="/" className="flex items-center gap-2">
-          <div className="bg-[#E0F2FE] p-1.5 rounded-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#57B3D6" strokeWidth="2.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+          <div className="flex items-center">
+            <img 
+              src="/Picture/logo.png" 
+              alt="FlashLearn Logo" 
+              className="h-10 w-auto object-contain" 
+            />
           </div>
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
         </Link>
 
         <div className="flex items-center gap-8 font-bold text-[#A0AEC0]">
-          <Link href="/signin" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
+          <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
           <Link href="/dashboard" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Dashboard</Link>
-          <Link href="#" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
-          <Link href="#" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
+          <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
+          <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>
 
@@ -69,11 +70,14 @@ export default function CreateDeck() {
                 >
                   Cancel
                 </Link>
-                <button 
-                  className="flex-1 py-3 px-6 rounded-2xl bg-[#FFB067] text-white font-bold shadow-[0_4px_0_#E38E49] hover:bg-[#ff9e45] active:shadow-none active:translate-y-[4px] transition-all text-lg"
+                
+                {/* CREATE BUTTON LINKED TO DECK FOLDER */}
+                <Link 
+                  href="/deck"
+                  className="flex-1 py-3 px-6 rounded-2xl bg-[#FFB067] text-white font-bold shadow-[0_4px_0_#E38E49] hover:bg-[#ff9e45] active:shadow-none active:translate-y-[4px] transition-all text-lg text-center"
                 >
                   Create
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -81,7 +85,7 @@ export default function CreateDeck() {
           {/* RIGHT COLUMN: Deck List Sidebar */}
           <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden border border-white h-full">
             <div className="bg-[#5794F7] py-6 px-10">
-              <h1 className="text-3xl font-bold text-white tracking-wide text-center">Deck Name</h1>
+              <h1 className="text-3xl font-bold text-white tracking-wide text-center">Existing Decks</h1>
             </div>
             
             <div className="p-8">
@@ -103,7 +107,6 @@ export default function CreateDeck() {
               </div>
             </div>
           </div>
-
         </div>
       </main>
 

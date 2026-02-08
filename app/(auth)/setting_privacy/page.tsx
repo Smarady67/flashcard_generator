@@ -14,22 +14,29 @@ export default function SettingsPage() {
 
   return (
     <div className="min-h-screen bg-[#D1E0F3] font-roboto text-[#4A5568] flex flex-col">
-      {/* --- Navbar --- */}
+      {/* --- Navbar (Synced) --- */}
       <nav className="flex items-center justify-between px-10 py-4 bg-white border-b border-gray-100 shadow-sm">
-        <div className="flex items-center gap-2">
-          <div className="bg-[#E0F2FE] p-1.5 rounded-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#57B3D6" strokeWidth="2.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+        <Link href="/" className="flex items-center gap-2">
+          <div className="flex items-center">
+            <img 
+              src="/Picture/logo.png" 
+              alt="FlashLearn Logo" 
+              className="h-10 w-auto object-contain" 
+            />
           </div>
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
-        </div>
+        </Link>
         <div className="flex gap-8 font-bold text-[#A0AEC0]">
-          <Link href="/signin">Sign in</Link>
-          <Link href="/dashboard" className="hover:text-[#57B3D6]">Dashboard</Link>
-          <Link href="/dashboard/study" className="hover:text-[#57B3D6]">Study Mode</Link>
-          <Link href="/dashboard/settings" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Setting</Link>
+          {/* Linked to login folder */}
+          <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
+          
+          <Link href="/dashboard" className="hover:text-[#57B3D6] transition-colors">Dashboard</Link>
+          
+          {/* Linked to study folder */}
+          <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
+          
+          {/* Linked to setting_privacy folder and set as Active */}
+          <Link href="/setting_privacy" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Setting</Link>
         </div>
       </nav>
 

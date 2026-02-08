@@ -18,20 +18,27 @@ export default function Dashboard() {
       {/* --- Navbar --- */}
       <nav className="flex items-center justify-between px-10 py-4 bg-white border-b border-gray-100 shadow-sm">
         <Link href="/" className="flex items-center gap-2">
-          <div className="bg-[#E0F2FE] p-1.5 rounded-lg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#57B3D6" strokeWidth="2.5">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
+          <div className="flex items-center">
+            <img 
+              src="/Picture/logo.png" 
+              alt="FlashLearn Logo" 
+              className="h-10 w-auto object-contain" 
+            />
           </div>
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
         </Link>
 
         <div className="flex items-center gap-8 font-bold text-[#A0AEC0]">
-          <Link href="/signin" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
+          {/* Linked to login folder */}
+          <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
+          
           <Link href="/dashboard" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Dashboard</Link>
-          <Link href="#" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
-          <Link href="#" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
+          
+          {/* Linked to study folder */}
+          <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
+          
+          {/* Linked to setting folder */}
+          <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>
 
@@ -43,7 +50,7 @@ export default function Dashboard() {
           
           {/* Blue Header */}
           <div className="bg-[#5794F7] py-8 px-12">
-            <h1 className="text-4xl font-bold text-white tracking-wide">Deck Name</h1>
+            <h1 className="text-4xl font-bold text-white tracking-wide">My Decks</h1>
           </div>
 
           <div className="p-10 space-y-8">
@@ -54,9 +61,14 @@ export default function Dashboard() {
                 <h2 className="text-2xl font-bold text-[#FFB067]">Total Decks: {decks.length}</h2>
                 <p className="text-[#A0AEC0] font-medium italic">Total Cards: 65</p>
               </div>
-              <button className="bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-3 px-10 rounded-full shadow-[0_5px_0_#E38E49] active:shadow-none active:translate-y-[5px] transition-all text-lg">
+              
+              {/* Linked to create folder */}
+              <Link 
+                href="/create" 
+                className="bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-3 px-10 rounded-full shadow-[0_5px_0_#E38E49] active:shadow-none active:translate-y-[5px] transition-all text-lg inline-block text-center"
+              >
                 Create Deck
-              </button>
+              </Link>
             </div>
 
             {/* Decks List */}
@@ -84,6 +96,7 @@ function DeckRow({ name }: { name: string }) {
       <span className="text-2xl font-bold text-[#57B3D6] tracking-tight">{name}</span>
       
       <div className="flex items-center gap-4">
+        {/* These can be linked to specific deck IDs later, e.g., href={`/study/${name}`} */}
         <button className="bg-white border-2 border-gray-100 text-[#2D3748] font-bold py-2 px-8 rounded-full shadow-sm hover:border-[#57B3D6] hover:text-[#57B3D6] transition-all text-sm uppercase tracking-tighter">
           Study Deck
         </button>

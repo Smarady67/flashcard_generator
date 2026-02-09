@@ -27,15 +27,13 @@ export default function SettingsPage() {
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
         </Link>
         <div className="flex gap-8 font-bold text-[#A0AEC0]">
-          {/* Linked to login folder */}
+          
           <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
           
           <Link href="/dashboard" className="hover:text-[#57B3D6] transition-colors">Dashboard</Link>
           
-          {/* Linked to study folder */}
           <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
           
-          {/* Linked to setting_privacy folder and set as Active */}
           <Link href="/setting_privacy" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Setting</Link>
         </div>
       </nav>

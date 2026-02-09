@@ -30,15 +30,13 @@ export default function CardManager() {
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
         </Link>
         <div className="flex gap-8 font-bold text-[#A0AEC0]">
-          {/* Linked to login folder */}
+          
           <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
           
           <Link href="/dashboard" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Dashboard</Link>
           
-          {/* Linked to study folder */}
           <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
           
-          {/* Linked to setting_privacy folder */}
           <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>
@@ -89,7 +87,6 @@ export default function CardManager() {
 
           {/* RIGHT: Edit Panel (Col-span 3) */}
           <div className="md:col-span-3 bg-white rounded-[40px] shadow-2xl overflow-hidden border border-white flex flex-col h-[500px]">
-            {/* Header with Close Icon */}
             <div className="bg-[#FFB067] py-4 px-10 flex justify-between items-center">
               <h1 className="text-2xl font-bold text-white tracking-wide">Card {selectedCard.id}</h1>
               <Link href="/dashboard" className="text-white hover:rotate-90 transition-transform">
@@ -110,7 +107,6 @@ export default function CardManager() {
 
               {/* Action Buttons */}
               <div className="flex justify-between items-center mt-auto">
-                {/* ANSWER BUTTON LINKED TO answer FOLDER */}
                 <Link 
                   href="/answer"
                   className="bg-[#00B4FF] hover:bg-[#0094d1] text-white font-bold py-3 px-12 rounded-full shadow-[0_4px_0_#0086bd] active:shadow-none active:translate-y-[4px] transition-all text-center"

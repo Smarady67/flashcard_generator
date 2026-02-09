@@ -29,15 +29,13 @@ export default function Dashboard() {
         </Link>
 
         <div className="flex items-center gap-8 font-bold text-[#A0AEC0]">
-          {/* Linked to login folder */}
+          
           <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
           
           <Link href="/dashboard" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Dashboard</Link>
           
-          {/* Linked to study folder */}
           <Link href="/study" className="hover:text-[#57B3D6] transition-colors">Study Mode</Link>
-          
-          {/* Linked to setting folder */}
+
           <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>
@@ -62,7 +60,6 @@ export default function Dashboard() {
                 <p className="text-[#A0AEC0] font-medium italic">Total Cards: 65</p>
               </div>
               
-              {/* Linked to create folder */}
               <Link 
                 href="/create" 
                 className="bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-3 px-10 rounded-full shadow-[0_5px_0_#E38E49] active:shadow-none active:translate-y-[5px] transition-all text-lg inline-block text-center"
@@ -96,7 +93,6 @@ function DeckRow({ name }: { name: string }) {
       <span className="text-2xl font-bold text-[#57B3D6] tracking-tight">{name}</span>
       
       <div className="flex items-center gap-4">
-        {/* These can be linked to specific deck IDs later, e.g., href={`/study/${name}`} */}
         <button className="bg-white border-2 border-gray-100 text-[#2D3748] font-bold py-2 px-8 rounded-full shadow-sm hover:border-[#57B3D6] hover:text-[#57B3D6] transition-all text-sm uppercase tracking-tighter">
           Study Deck
         </button>

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link'; // [1] Import Link for navigation
+import Link from 'next/link'; 
 
 export default function FlashcardLanding() {
   return (
@@ -46,7 +46,6 @@ export default function FlashcardLanding() {
               Learn more about flashcard generator
             </p>
             
-            {/* [4] Get Started Button (Links to Signup) */}
             <Link href="/signup" className="inline-block bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-4 px-12 rounded-full shadow-[0_5px_0_#E38E49] active:shadow-none active:translate-y-[5px] transition-all text-lg font-roboto">
               Get Started for Free
             </Link>
@@ -102,7 +101,7 @@ export default function FlashcardLanding() {
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>
             </div>
-            {/* [5] Optional: Link this button to signup as well */}
+            
             <Link href="/signup" className="bg-[#FFB067] text-white py-3.5 px-16 rounded-full font-roboto italic text-2xl shadow-[0_5px_0_#E38E49]">
               Learn More
             </Link>

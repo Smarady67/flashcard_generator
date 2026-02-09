@@ -24,7 +24,6 @@ export default function SignUp() {
       {/* --- Main Content --- */}
       <main className="flex-grow flex items-center justify-center px-10 py-12 relative overflow-hidden">
         
-        {/* Decorative Background Accents */}
         <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-[#E0F2FE] rounded-full opacity-40 blur-3xl"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-80 h-80 bg-[#FEF3C7] rounded-full opacity-40 blur-3xl"></div>
 
@@ -48,7 +47,6 @@ export default function SignUp() {
             </div>
           </div>
 
-          {/* RIGHT SIDE: YOUR ORIGINAL SIGN UP BLOCK */}
           <div className="md:w-1/2 flex justify-center">
             <div className="w-full max-w-md bg-white rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-10 border border-gray-50">
               

@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 
 export default function ChangePasswordPage() {
-  // Mock user data to match your reference
   const user = {
     name: 'James',
     email: 'lebronjames123@gmail.com',

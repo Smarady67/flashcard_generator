@@ -24,15 +24,13 @@ export default function StudyMode() {
           <span className="font-extrabold text-[#2D3748] text-xl">Flash Card Generator</span>
         </Link>
         <div className="flex gap-8 font-bold text-[#A0AEC0]">
-          {/* Linked to login folder */}
+          
           <Link href="/login" className="hover:text-[#57B3D6] transition-colors">Sign in</Link>
           
           <Link href="/dashboard" className="hover:text-[#57B3D6] transition-colors">Dashboard</Link>
           
-          {/* Active Link for Study Mode */}
           <Link href="/study" className="text-[#57B3D6] border-b-4 border-[#57B3D6] pb-1">Study Mode</Link>
           
-          {/* Linked to setting_privacy folder */}
           <Link href="/setting_privacy" className="hover:text-[#57B3D6] transition-colors">Setting</Link>
         </div>
       </nav>

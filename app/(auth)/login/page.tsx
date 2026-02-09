@@ -24,7 +24,6 @@ export default function SignIn() {
       {/* --- Main Content --- */}
       <main className="flex-grow flex items-center justify-center px-10 py-12 relative overflow-hidden">
         
-        {/* Decorative Background Accents */}
         <div className="absolute top-[-10%] right-[-10%] w-80 h-80 bg-[#E0F2FE] rounded-full opacity-40 blur-3xl"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-80 h-80 bg-[#FEF3C7] rounded-full opacity-40 blur-3xl"></div>
 
@@ -62,7 +61,6 @@ export default function SignIn() {
                 </div>
 
                 <div className="flex items-center justify-between gap-4 pt-4">
-                  {/* FORGOT PASSWORD LINK */}
                   <Link 
                     href="/forgot" 
                     className="flex-1 bg-white border-2 border-gray-100 hover:border-[#57B3D6] text-[#A0AEC0] hover:text-[#57B3D6] font-bold py-4 rounded-full shadow-sm hover:shadow-md transition-all text-base text-center block"
@@ -70,7 +68,6 @@ export default function SignIn() {
                     Forgot password?
                   </Link>
                   
-                  {/* SIGN IN LINK (Linked to Dashboard) */}
                   <Link 
                     href="/dashboard"
                     className="flex-1 bg-[#FFB067] hover:bg-[#ff9e45] text-white font-bold py-4 rounded-full shadow-[0_4px_0_#E38E49] active:shadow-none active:translate-y-[4px] transition-all text-lg text-center block"

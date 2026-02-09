@@ -6,7 +6,6 @@ import Link from 'next/link';
 export default function CreateDeck() {
   const [deckName, setDeckName] = useState('');
 
-  // Mock list for the right-hand panel
   const existingDecks = [
     'Biology 101',
     'Organic Chemistry',
@@ -17,8 +16,6 @@ export default function CreateDeck() {
 
   return (
     <div className="min-h-screen bg-[#D1E0F3] font-roboto text-[#4A5568] flex flex-col">
-      
-      {/* --- Navbar (Synced with Dashboard) --- */}
       <nav className="flex items-center justify-between px-10 py-4 bg-white border-b border-gray-100 shadow-sm">
         <Link href="/" className="flex items-center gap-2">
           <div className="flex items-center">
@@ -71,7 +68,6 @@ export default function CreateDeck() {
                   Cancel
                 </Link>
                 
-                {/* CREATE BUTTON LINKED TO DECK FOLDER */}
                 <Link 
                   href="/deck"
                   className="flex-1 py-3 px-6 rounded-2xl bg-[#FFB067] text-white font-bold shadow-[0_4px_0_#E38E49] hover:bg-[#ff9e45] active:shadow-none active:translate-y-[4px] transition-all text-lg text-center"

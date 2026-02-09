@@ -8,7 +8,6 @@ export default function ResetPassword() {
 
   const handleReset = (e: React.FormEvent) => {
     e.preventDefault();
-    // Logic to update password would go here
     router.push('/login');
   };
 

@@ -103,7 +103,6 @@ export default function CardAnswerManager() {
               </div>
 
               <div className="flex justify-between items-center mt-auto">
-                {/* QUESTION BUTTON LINKED TO DECK FOLDER */}
                 <Link 
                   href="/deck"
                   className="bg-[#00B4FF] hover:bg-[#0094d1] text-white font-bold py-3 px-12 rounded-full shadow-[0_4px_0_#0086bd] active:shadow-none active:translate-y-[4px] transition-all text-center"

@@ -24,7 +24,7 @@ export default function SpendlyLanding() {
 
       {/* --- Hero Section --- */}
       <section className="pt-32 pb-40 px-6 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/5 rounded-full blur-[120px] -z-10"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-teal-500/5 rounded-full blur-[120px] -z-10"></div>
         
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="inline-block border border-teal-500/30 bg-teal-500/5 px-4 py-1.5 rounded-full mb-4">
@@ -71,7 +71,7 @@ export default function SpendlyLanding() {
 
       {/* --- Bottom CTA Section --- */}
       <section className="py-32 px-6">
-        <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#134E4A] to-[#0B0C10] rounded-[40px] p-12 md:p-20 text-center border border-teal-500/20 shadow-2xl relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-linear-to-br from-[#134E4A] to-[#0B0C10] rounded-[40px] p-12 md:p-20 text-center border border-teal-500/20 shadow-2xl relative overflow-hidden">
           <div className="relative z-10 space-y-8">
             <h2 className="text-3xl md:text-4xl font-light tracking-tight">Ready to get organized?</h2>
             <p className="text-teal-100/60 text-xs font-bold uppercase tracking-[0.3em] italic">Join thousands of users optimizing their productivity.</p>

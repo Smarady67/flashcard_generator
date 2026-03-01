@@ -3,7 +3,11 @@
     "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,9 +25,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@db/*": ["./src/db/*"],
-      "@lib/*": ["./src/lib/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@db/*": [
+        "./src/db/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ]
     }
   },
   "include": [
@@ -31,8 +41,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "**/*.mts", 
-    "drizzle.config.ts"
+    "**/*.mts",
+    "drizzle.config.ts",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
